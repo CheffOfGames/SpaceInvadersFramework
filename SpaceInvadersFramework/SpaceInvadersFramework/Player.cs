@@ -8,10 +8,7 @@ namespace SpaceInvadersFramework
 {
     class Player : SpriteGameObject
     {
-        public Player(string assetname, int layer = 0, string id = "", int sheetIndex = 0) : base(assetname, layer, id, sheetIndex)
-        {
-            assetname = "ship";
-        }
+        public Player() : base("ship") { }
 
         public override void HandleInput(InputHelper inputHelper)
         {
