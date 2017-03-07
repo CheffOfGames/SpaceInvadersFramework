@@ -28,9 +28,10 @@ namespace SpaceInvadersFramework
             spriteBatch = new SpriteBatch(GraphicsDevice);
             screen = new Point(800, 600);
             this.SetFullScreen(false);
-            
+
             // TODO: add gamestate to GameStateManager here
-            
+            gameStateManager.AddGameState("PlayingState", new PlayingState());
+            gameStateManager.SwitchTo("PlayingState");
         }
     }
 }
