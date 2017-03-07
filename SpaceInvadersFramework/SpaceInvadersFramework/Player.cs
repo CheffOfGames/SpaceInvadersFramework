@@ -7,6 +7,9 @@ namespace SpaceInvadersFramework
 {
     class Player : SpriteGameObject
     {
+        public Player(string "ship")
+        {
 
+        }
     }
 }
