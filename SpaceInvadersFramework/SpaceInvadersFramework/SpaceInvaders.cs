@@ -16,11 +16,12 @@ namespace SpaceInvadersFramework
     /// </summary>
     public class SpaceInvaders : GameEnvironment
     {
+        public const String PlayingState = "PlayingState", TitleScreen = "TitleScreen";
+
         public SpaceInvaders()
         {
             Content.RootDirectory = "Content";
         }
-
         
         protected override void LoadContent()
         {
@@ -30,8 +31,9 @@ namespace SpaceInvadersFramework
             this.SetFullScreen(false);
 
             // TODO: add gamestate to GameStateManager here
-            gameStateManager.AddGameState("PlayingState", new PlayingState());
-            gameStateManager.SwitchTo("PlayingState");
+            gameStateManager.AddGameState(PlayingState, new PlayingState());
+            gameStateManager.AddGameState(TitleScreen, new TitleScreenState());
+            gameStateManager.SwitchTo(TitleScreen);
         }
     }
 }

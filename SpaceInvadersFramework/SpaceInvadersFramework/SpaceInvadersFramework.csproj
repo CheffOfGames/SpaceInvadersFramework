@@ -80,6 +80,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Score.cs" />
     <Compile Include="SpaceInvaders.cs" />
+    <Compile Include="TitleScreenState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
