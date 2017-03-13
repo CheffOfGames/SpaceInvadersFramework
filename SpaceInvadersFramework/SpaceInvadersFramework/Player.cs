@@ -14,12 +14,12 @@ namespace SpaceInvadersFramework
         {
             if (inputHelper.IsKeyDown(Keys.Left) || this.position.X >= 768)
             {
-                this.position.X--;
+                this.position.X -= 3;
             }
 
             if (inputHelper.IsKeyDown(Keys.Right) || this.position.X <= 0)
             {
-                this.position.X++;
+                this.position.X += 3;
             }
         }
     }
