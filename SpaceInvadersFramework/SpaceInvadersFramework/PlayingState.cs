@@ -11,7 +11,7 @@ namespace SpaceInvadersFramework
         public PlayingState()
         {
             Player thePlayer = new Player();
-            thePlayer.Position = new Vector2(400, 400);
+            thePlayer.Position = new Vector2(384, 580);
 
             this.Add(thePlayer);
         }
