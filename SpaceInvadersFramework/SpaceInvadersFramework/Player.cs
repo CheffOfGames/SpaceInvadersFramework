@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Input;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,18 @@ namespace SpaceInvadersFramework
 
         public override void HandleInput(InputHelper inputHelper)
         {
-            if (inputHelper.IsKeyDown(Keys.Left) || this.position.X >= 768)
+            if (inputHelper.IsKeyDown(Keys.Left) && this.position.X >= 0)
             {
-                this.position.X -= 3;
+                this.velocity = new Vector2(-300, 0);
+            }
+            else
+            {
+                this.velocity = Vector2.Zero;
             }
 
-            if (inputHelper.IsKeyDown(Keys.Right) || this.position.X <= 0)
+            if (inputHelper.IsKeyDown(Keys.Right) && this.position.X <= SpaceInvaders.Screen.X - this.sprite.Width)
             {
-                this.position.X += 3;
+                this.velocity = new Vector2(300, 0);
             }
         }
     }
