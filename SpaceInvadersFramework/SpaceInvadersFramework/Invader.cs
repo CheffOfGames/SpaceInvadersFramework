@@ -8,9 +8,10 @@ namespace SpaceInvadersFramework
 {
     class Invader : SpriteGameObject
     {
-        public Invader(String assetName) : base(assetName)
+        public Invader(int x, int y, String assetName) : base(assetName)
         {
             this.Velocity = new Vector2(100, 0);
+            this.position = new Vector2(x, y);
         }
 
         public override void Update(GameTime gameTime)

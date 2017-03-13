@@ -8,18 +8,24 @@ namespace SpaceInvadersFramework
 {
     class PlayingState : GameObjectList
     {
+        GameObjectList invaders;
+        
         public PlayingState()
         {
             Player thePlayer = new Player();
             thePlayer.Position = new Vector2(384, 580);
 
-            Invader anInvader = new Invader("red_invader");
-            anInvader.Position = new Vector2(0, 0);
+            this.invaders = new GameObjectList(0, "invaders");
+
+            for (int i = 0; i < 9; i++)
+            {
+                this.invaders.Add(new Invader(i * 80 + 40, 0, "blue_invader"));
+                this.invaders.Add(new Invader(i * 80 + 40, 64, "yellow_invader"));
+                this.invaders.Add(new Invader(i * 80 + 40, 128, "red_invader"));
+            }
 
             this.Add(thePlayer);
-            this.Add(anInvader);
+            this.Add(invaders);
         }
-
-        GameObjectList invaders = new GameObjectList(0,"invaders");
     }
 }
