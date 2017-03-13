@@ -15,5 +15,7 @@ namespace SpaceInvadersFramework
 
             this.Add(thePlayer);
         }
+
+        GameObjectList invaders = new GameObjectList(0,"invaders");
     }
 }
