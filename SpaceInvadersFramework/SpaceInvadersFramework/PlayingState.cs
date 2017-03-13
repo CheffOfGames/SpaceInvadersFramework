@@ -26,9 +26,9 @@ namespace SpaceInvadersFramework
                 this.invaders.Add(new Invader(i * 80 + 40, 64, "yellow_invader"));
                 this.invaders.Add(new Invader(i * 80 + 40, 128, "red_invader"));
             }
-            this.Add(thePlayer);
             this.Add(invaders);
             this.Add(bullets);
+            this.Add(thePlayer);
         }
 
         public override void HandleInput(InputHelper inputHelper)
@@ -37,7 +37,20 @@ namespace SpaceInvadersFramework
 
             if (inputHelper.KeyPressed(Keys.Space))
             {
-                this.bullets.Add(new Bullet((int)thePlayer.Position.X, (int)thePlayer.Position.Y));
+                this.bullets.Add(new Bullet(thePlayer.Position));
+            }
+
+
+            foreach (Invader Invader in invaders.Objects)
+            {
+                foreach (Bullet Bullet in bullets.Objects)
+                {
+                    if (Invader.CollidesWith(Bullet))
+                    {
+                        Invader.Visible = false;
+                        Bullet.Visible = false;
+                    }
+                }
             }
         }
     }

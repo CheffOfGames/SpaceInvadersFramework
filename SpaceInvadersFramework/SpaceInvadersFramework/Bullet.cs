@@ -9,10 +9,10 @@ namespace SpaceInvadersFramework
 {
     class Bullet : SpriteGameObject
     {
-        public Bullet(int x, int y) : base("bullet")
+        public Bullet(Vector2 startPos) : base("bullet")
         {
             this.velocity = new Vector2(0, -400);
-            this.position = new Vector2(x, y);
+            this.position = startPos;
         }
     }
 }
