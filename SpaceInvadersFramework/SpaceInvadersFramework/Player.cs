@@ -12,12 +12,12 @@ namespace SpaceInvadersFramework
 
         public override void HandleInput(InputHelper inputHelper)
         {
-            if (inputHelper.IsKeyDown(Keys.Left))
+            if (inputHelper.IsKeyDown(Keys.Left) || this.position.X >= 768)
             {
                 this.position.X--;
             }
 
-            if (inputHelper.IsKeyDown(Keys.Right))
+            if (inputHelper.IsKeyDown(Keys.Right) || this.position.X <= 0)
             {
                 this.position.X++;
             }
